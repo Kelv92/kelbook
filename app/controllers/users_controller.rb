@@ -25,6 +25,9 @@ class UsersController < ApplicationController
   def destroy
     user = User.find(params[:id])
     authorize user
+    user.status.each do |status|
+      status.destroy
+    end
     user.destroy
     redirect_to users_path, :notice => "User deleted."
   end

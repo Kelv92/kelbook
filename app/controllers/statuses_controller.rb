@@ -1,5 +1,6 @@
 class StatusesController < ApplicationController
   include Pundit
+  include Commontator
   before_filter :authenticate_user!, only: [:new, :create, :update, :destroy]
   before_action :set_status, only: [:show, :edit, :update, :destroy]
 

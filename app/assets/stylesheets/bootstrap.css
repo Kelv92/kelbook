@@ -230,6 +230,9 @@ body {
   background-color: #ffffff;
 }
 
+
+/* Color of user's profile_name, time of status posted, editting & deleting status on /feed page can be changed here~yj */
+/* Refer to https://kuler.adobe.com/explore/most-popular/?time=month for color options~yj */
 a {
   color: #0088cc;
   text-decoration: none;

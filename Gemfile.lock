@@ -37,6 +37,9 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    commontator (4.6.1)
+      jquery-rails
+      rails (>= 3.1)
     devise (3.2.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -131,6 +134,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  commontator
   devise
   jbuilder (~> 2.0)
   jquery-rails

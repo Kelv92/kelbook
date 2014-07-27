@@ -17,7 +17,8 @@ resources :users
   get '/:id', to: 'profiles#show'
 
 
-
+#Added by June: For Commontator Gem
+mount Commontator::Engine => '/commontator'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

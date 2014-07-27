@@ -1,4 +1,8 @@
 class Status < ActiveRecord::Base
+	# Added to use gem Commontator~June
+	acts_as_commontable
+
+
 	belongs_to :user
 	validates :content, presence: true,
 						length: {minimum: 2}
