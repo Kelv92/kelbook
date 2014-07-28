@@ -52,3 +52,5 @@ gem 'pundit'
 
 #Added by June : Commontator Gem 
 gem 'commontator'
+#Added to view error log
+gem 'rails_12factor'
