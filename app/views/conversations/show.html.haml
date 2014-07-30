@@ -1,0 +1,8 @@
+%h1{:style=> "text-align: center"}= conversation.subject
+%div.list-group{:style=> "list-style-type:none"}
+  = content_tag_for(:li, conversation.receipts_for(current_user)) do |receipt|
+    - message = receipt.message
+    %h5{ :style => "color: blue"}= message.sender.profile_name
+    %p.container= message.body
+= render 'messages/form', conversation: conversation
+

@@ -1,0 +1,16 @@
+%h1.page-header{:style=> "text-align: center"} Conversations
+
+= link_to 'Start Conversation', :new_conversation, class: "btn btn-success"
+
+
+%div.well{:style=> "margin-top: 30px"}
+  %h3 Inbox
+  %ul{:style=> "list-style-type:none"}= render collection: mailbox.inbox, partial: 'conversation'
+%div.well
+  %h3 Sentbox
+  %ul{:style=> "list-style-type:none"}= render collection: mailbox.sentbox, partial: 'conversation'
+%div.well
+  %h3 Trash
+  = link_to "Empty Trash", empty_trash_path, data: {confirm: 'Are you sure?'}
+  %ul{:style=> "list-style-type:none"}= render collection: mailbox.trash, partial: 'conversation'
+

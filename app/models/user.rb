@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 
   # Added to use gem : Commontator~June
   acts_as_commontator
-
+  acts_as_messageable
   enum role: [:user, :vip, :admin]
   after_initialize :set_default_role, :if => :new_record?
 
@@ -30,4 +30,17 @@ def gravitar_url
   hash = Digest::MD5.hexdigest(downcase_email)
   "http://gravatar.com/avatar/#{hash}"
 end
+
+def name
+  email
+end
+
+def mailboxer_email(object)
+  #Check if an email should be sent for that object
+  #if true
+  email
+  #if false
+  #return nil
+end
+
 end

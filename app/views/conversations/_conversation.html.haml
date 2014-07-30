@@ -1,0 +1,18 @@
+= content_tag_for(:li, conversation) do |conversation|
+  %div.row
+    %div.span2{:style=> "display:inline"}
+      |
+      - conversation.participants.each do |user|
+        - unless user == current_user
+          = link_to user.profile_name, user.profile_name
+    %div.span7{:style=> "display:inline"}
+      |
+      = link_to conversation.subject, conversation_path(conversation)
+    %div.span2{:style => "display:inline"}
+      - if conversation.is_completely_trashed?(current_user)
+        = link_to 'Untrash', untrash_conversation_path(conversation), method: :post
+      - else
+        = link_to 'Move to trash', trash_conversation_path(conversation), method: :post
+ 
+    
+    

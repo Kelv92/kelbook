@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   get 'profiles/show'
+
+  resources :conversations
+  get 'empty_trash', to: 'conversations#empty_trash'
+
   devise_for :users
   devise_scope :user  do
     get 'register', to: 'devise/registrations#new', as: :register
@@ -15,6 +19,14 @@ resources :users
   root to: 'statuses#index'
 
   get '/:id', to: 'profiles#show'
+
+resources :conversations, only: [:index, :show, :new, :create] do
+  member do
+    post :reply
+    post :trash
+    post :untrash
+     end
+end
 
 
 #Added by June: For Commontator Gem

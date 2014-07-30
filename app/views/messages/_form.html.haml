@@ -1,0 +1,5 @@
+= simple_form_for :message, url: reply_conversation_path(conversation) do |f|
+  = f.input :body, :label =>"Reply"
+  .form-actions
+    = f.button :submit, class: 'btn-primary'
+    = link_to "Cancel", conversations_path, class: 'btn btn-danger'

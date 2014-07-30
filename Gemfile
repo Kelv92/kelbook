@@ -52,5 +52,8 @@ gem 'pundit'
 
 #Added by June : Commontator Gem 
 gem 'commontator'
-#Added to view error log
+#Kel: Conversation Gem
+gem 'mailboxer'
+gem 'haml'
+#Kel: Added to view error log in heroku
 gem 'rails_12factor'

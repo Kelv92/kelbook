@@ -25,9 +25,12 @@ class UsersController < ApplicationController
   def destroy
     user = User.find(params[:id])
     authorize user
+    #Kel: Deletes status created by user
     user.status.each do |status|
       status.destroy
     end
+    #Kel: Deletes conversations in trash
+    empty_trash_path
     user.destroy
     redirect_to users_path, :notice => "User deleted."
   end
